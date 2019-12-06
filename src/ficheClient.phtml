@@ -1,0 +1,50 @@
+
+<?php 
+	include('head.phtml');
+	include('nav.php');
+?>
+
+<body>
+
+	<h1 class="h1name"><?= $client->name ?></h1>
+
+		<table class="tableFiche">
+
+			<thead class="table-dark">
+
+				<tr>
+
+					<?php foreach ($champ as $c): ?>
+
+					<th scope="col">
+
+							<?= $c['libelle']?>
+
+					</th>
+
+					<?php endforeach ?>
+
+				</tr>
+
+			</thead>
+									
+			<tr>
+
+				<?php foreach ($valeur as $v): ?>
+
+				<td class="font-weight-bold"> 
+
+					<?= $v['valeurs'] ?>
+
+				</td>
+
+				<?php endforeach ?>
+
+			</tr>													
+										
+		</table>
+
+	<script src="js/script.js"></script>
+
+</body>
+</html>	

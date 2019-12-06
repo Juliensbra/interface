@@ -1,0 +1,68 @@
+<?php 
+	include('head.phtml');
+	include('nav.php');
+?>
+
+<body>
+
+	<h1 class="h1name"><?= $client->name ?></h1>
+
+					<form method="POST">
+
+						<button id="bouton_form" type="button">Ajouter un nouveau champ</button>
+
+						
+						<div id="choixChamp">
+
+							<div class="choisir">
+
+								<select name="idChamp" class="form-control champ" id="exampleFormControlSelect1">
+
+									<optgroup label="Contact Client">
+										
+										<?php foreach ($champ as $c) {
+
+											echo'<option value="'.$c['id'].'">'.$c['libelle'].'</option>';
+
+										}?>
+
+									</optgroup>
+
+								</select>
+
+
+							</div>
+
+							<div class="saisir">
+
+								<input type="text" name="valeur" class="valChamp">		
+							</div>
+
+						</div>
+
+						<input type="hidden" value="<?= $client->id ?>" name="idClient">
+
+					<div id="addInput"></div>
+
+					<input id="envoiForm" type="submit" name="save" value="Sauvegarder" class="submit">
+					
+				</form>	
+				
+
+				<form id="affiche" class="afficheForm" method="POST">
+
+					<label for="NouveauChamp">Champ</label>
+
+					<input type="text" name="NouveauChamp" id="NouveauChamp">
+
+					<button type="submit" name="addNewCh">Insérer le champ</button><br><br>
+						
+					<a href="modify_ficheClient.php">Annuler</a> 
+					
+				</form>
+	
+	<script src="../js/script.js"></script>
+
+</body>
+
+</html>

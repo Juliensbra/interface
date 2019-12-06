@@ -1,0 +1,52 @@
+<?php 
+	include('head.phtml');
+	include('nav.php');
+?>
+		
+	<table class="table">
+
+		<thead class="table-dark">
+
+			<tr>
+
+				<th scope="col">#</th>
+				<th scope="col">Entreprise</th>
+				<th scope="col">Action</th>
+
+			</tr>
+
+		</thead>
+
+		<?php foreach ($clients as $client): ?>
+
+			<tbody>
+
+			    <tr>
+						
+			        <th scope="row"><?= $client['id'] ?></th>
+			        
+			        <td class="font-weight-bold"><?= $client['name'] ?></td>
+
+			        <td>
+
+			        	<a href="ficheClient.php?id=<?= $client['id']?>" class="couleur"><i class="fas fa-search-plus"></i></a> 
+
+			        	<a href="modify_ficheClient.php?id=<?= $client['id'] ?>" class="couleurBis"><i class="fas fa-edit"></i></a> 
+
+			        	<a href="delete_client.php?id=<?= $client['id'] ?>" class="couleurBis2"><i class="fas fa-trash"></i></a>
+
+			        </td>
+			        
+
+			    </tr>
+
+
+			</tbody>
+				
+		<?php endforeach ?>
+			  	
+
+	</table>
+		
+</body>
+</html>
