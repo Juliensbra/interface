@@ -5,7 +5,7 @@
 /*****************************modify_ficheClient.phtml**************************/
 
 
-//fonction pour l'ajout de champ//
+///fonction pour l'ajout de champ///
 
 
 let button;
